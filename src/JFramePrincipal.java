@@ -1,8 +1,10 @@
 
 import com.sun.glass.events.KeyEvent;
 import java.awt.Desktop;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.Vector;
@@ -425,7 +427,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
             //abre el archivo despues de haber almacenado los datos
              Desktop.getDesktop().open(new File("datos.txt"));
 
-        } catch (Exception ex) {
+        } catch (HeadlessException | IOException ex) {
             JOptionPane.showMessageDialog(null, "Datos NO Guardados");
         }
     }//GEN-LAST:event_jMI_GuardarActionPerformed
